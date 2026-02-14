@@ -16,6 +16,8 @@ const gray = {
 module.exports = {
     content: [
         './resources/scripts/**/*.{js,ts,tsx}',
+        './resources/js/**/*.{js,ts,tsx}',
+        './resources/views/**/*.blade.php',
     ],
     theme: {
         extend: {
@@ -24,27 +26,25 @@ module.exports = {
             },
             borderRadius: {
                 box: 'var(--radiusBox)',
-                component: 'var(--radiusInput)'
+                component: 'var(--radiusInput)',
             },
             colors: {
                 black: '#131a20',
-                // "primary" and "neutral" are deprecated, prefer the use of "blue" and "gray"
-                // in new code.
                 arix: 'var(--primary)',
                 success: {
                     50: 'var(--successText)',
                     100: 'var(--successBorder)',
-                    200: 'var(--successBackground)'
+                    200: 'var(--successBackground)',
                 },
                 danger: {
                     50: 'var(--dangerText)',
                     100: 'var(--dangerBorder)',
-                    200: 'var(--dangerBackground)'
+                    200: 'var(--dangerBackground)',
                 },
                 secondary: {
                     50: 'var(--secondaryText)',
                     100: 'var(--secondaryBorder)',
-                    200: 'var(--secondaryBackground)'
+                    200: 'var(--secondaryBackground)',
                 },
                 primary: colors.blue,
                 gray: gray,
@@ -58,7 +58,7 @@ module.exports = {
                 250: '250ms',
             },
             borderColor: theme => ({
-                default: theme('colors.neutral.400', 'currentColor'),
+                DEFAULT: theme('colors.neutral.400', 'currentColor'),
             }),
         },
     },
@@ -67,5 +67,5 @@ module.exports = {
         require('@tailwindcss/forms')({
             strategy: 'class',
         }),
-    ]
+    ],
 };
